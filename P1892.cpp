@@ -29,11 +29,13 @@ int main(){
         int a,b;
         char opt;
         cin>>opt>>a>>b;
+//合并操作，两倍空间存储，前n个节点表示朋友，后n个节点表示敌人，合并操作时，将a和b的敌人合并到a和b的敌人中
         if(opt=='F'){
-            merge(a,b);
+            merge(a,b);//a与b为友，则a的敌人与b的敌人为友
+            //merge(a+n,b+n);//a与b为友，则a的敌人与b的敌人为敌
         }else{
-            merge(b+n,a);
-            merge(a+n,b);
+            merge(b+n,a);//a与b为敌，则a与b的敌人为友
+            merge(a+n,b);//a与b为敌，则b与a的敌人为友
         }
     }
     int ans=0;

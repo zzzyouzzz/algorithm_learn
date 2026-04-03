@@ -16,7 +16,7 @@ void build(int n){
 }
 int query(int l,int r){
     int k=log2(r-l+1);
-    return min(st[k][l],st[k][r-(1<<k)+1]);
+    return min(st[k][l],st[k][r-(1<<k)+1]);//查询区间[l,l+(1<<k)-1]和[r-(1<<k)+1,r]的最小值,两区间可能重叠，但不影响最值查询，且能刚好覆盖[l,r]区间
 }   
 int main(){
     int n,m;
